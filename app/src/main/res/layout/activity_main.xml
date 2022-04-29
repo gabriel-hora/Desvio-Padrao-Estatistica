@@ -1,251 +1,368 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="48dp"
-        android:text="Desvio Padrão | Variância"
-        android:textColor="@color/preto"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/etNumeroLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="350dp"
-            android:layout_height="wrap_content"
-            app:errorContentDescription="Preencha o campo"
-            app:errorEnabled="true"
-            app:errorTextAppearance="@color/black">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/etNumero"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Digite um número"
-                android:inputType="number"
-                android:lines="1" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnReset"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
-            android:backgroundTint="@color/preto"
-            android:text="Reset" />
-
-        <Button
-            android:id="@+id/btnAdd"
-            android:layout_width="100dp"
-            android:layout_height="match_parent"
-            android:layout_marginStart="10dp"
-            android:backgroundTint="@color/preto"
-            android:text="Add" />
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <TextView
+            android:id="@+id/info"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:text="Números escolhidos: " />
+            android:layout_gravity="center"
+            android:layout_marginTop="48dp"
+            android:text="Desvio Padrão | Variância"
+            android:textColor="@color/preto"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-
-        <TextView
-            android:id="@+id/tvNumerosEscolhidos"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="" />
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/etNumeroLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                app:errorContentDescription="Preencha o campo"
+                app:errorEnabled="true"
+                app:errorTextAppearance="@color/black">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etNumero"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Digite um número"
+                    android:inputType="number"
+                    android:lines="1" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnReset"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@color/preto"
+                android:text="Reset" />
+
+            <Button
+                android:id="@+id/btnAdd"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@color/preto"
+                android:text="Add" />
+
+            <Button
+                android:id="@+id/btnListaOrdenada"
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@color/preto"
+                android:text="Sort" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:text="Números escolhidos: " />
+
+
+            <TextView
+                android:id="@+id/tvNumerosEscolhidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="675dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <!-- CARD MÍNIMO -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardMinimo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="@color/preto"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/itCardMinimo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="36sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txtMinimo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Mínimo"
+                app:layout_constraintEnd_toEndOf="@+id/cardMinimo"
+                app:layout_constraintHorizontal_bias="0.528"
+                app:layout_constraintStart_toStartOf="@+id/cardMinimo"
+                app:layout_constraintTop_toBottomOf="@+id/cardMinimo" />
+
+
+            <!-- CARD MÁXIMO -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardMaximo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginEnd="32dp"
+                android:backgroundTint="@color/preto"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintBottom_toBottomOf="@+id/cardMinimo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cardMinimo"
+                app:layout_constraintVertical_bias="0.0">
+
+                <TextView
+                    android:id="@+id/itCardMaximo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="36sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Máximo"
+                app:layout_constraintEnd_toEndOf="@+id/cardMaximo"
+                app:layout_constraintHorizontal_bias="0.56"
+                app:layout_constraintStart_toStartOf="@+id/cardMaximo"
+                app:layout_constraintTop_toBottomOf="@+id/cardMaximo" />
+
+
+            <!-- CARD AMPLITUDE -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardAmplitude"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="52dp"
+                android:backgroundTint="@color/preto"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtMinimo">
+
+                <TextView
+                    android:id="@+id/itCardAmplitude"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="36sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- CARD MÉDIA -->
+            <TextView
+                android:id="@+id/txtAmplitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Amplitude"
+                app:layout_constraintEnd_toEndOf="@+id/cardAmplitude"
+                app:layout_constraintStart_toStartOf="@+id/cardAmplitude"
+                app:layout_constraintTop_toBottomOf="@+id/cardAmplitude" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardMedia"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="52dp"
+                android:layout_marginEnd="32dp"
+                android:backgroundTint="@color/preto"
+                app:cardCornerRadius="4dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+                <TextView
+                    android:id="@+id/itCardMedia"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="36sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txtMedia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Média"
+                app:layout_constraintEnd_toEndOf="@+id/cardMedia"
+                app:layout_constraintHorizontal_bias="0.459"
+                app:layout_constraintStart_toStartOf="@+id/cardMedia"
+                app:layout_constraintTop_toBottomOf="@+id/cardMedia" />
+
+
+            <!-- CARD MEDIANA -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardMediana"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="40dp"
+                android:backgroundTint="@color/preto"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtAmplitude">
+
+                <TextView
+                    android:id="@+id/itCardMediana"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="36sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txtMediana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Mediana"
+                app:layout_constraintEnd_toEndOf="@+id/cardMediana"
+                app:layout_constraintHorizontal_bias="0.456"
+                app:layout_constraintStart_toStartOf="@+id/cardMediana"
+                app:layout_constraintTop_toBottomOf="@+id/cardMediana" />
+
+
+            <!-- CARD VARIÂNCIA -->
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardVariancia"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="44dp"
+                android:layout_marginEnd="32dp"
+                android:backgroundTint="@color/preto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtMedia">
+
+                <TextView
+                    android:id="@+id/itCardVariancia"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="36sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txtVariancia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Variância"
+                app:layout_constraintEnd_toEndOf="@+id/cardVariancia"
+                app:layout_constraintHorizontal_bias="0.521"
+                app:layout_constraintStart_toStartOf="@+id/cardVariancia"
+                app:layout_constraintTop_toBottomOf="@+id/cardVariancia" />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardDesvioPadrao"
+                android:layout_width="300dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="50dp"
+                android:backgroundTint="@color/preto"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.477"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/itCardDesvioPadrao"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/white"
+                    android:textSize="36sp" />
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/txtDesvioPadrao"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Desvio Padrão"
+                app:layout_constraintEnd_toEndOf="@+id/cardDesvioPadrao"
+                app:layout_constraintStart_toStartOf="@+id/cardDesvioPadrao"
+                app:layout_constraintTop_toBottomOf="@+id/cardDesvioPadrao" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <!-- CARD MÍNIMO -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardMinimo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:backgroundTint="@color/preto"
-            app:cardCornerRadius="4dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <TextView
-                android:id="@+id/itCardMinimo"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="@color/white"
-                android:textSize="36sp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/txtMinimo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Mínimo"
-            app:layout_constraintEnd_toEndOf="@+id/cardMinimo"
-            app:layout_constraintHorizontal_bias="0.528"
-            app:layout_constraintStart_toStartOf="@+id/cardMinimo"
-            app:layout_constraintTop_toBottomOf="@+id/cardMinimo" />
-
-
-        <!-- CARD MÁXIMO -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardMaximo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginEnd="32dp"
-            android:backgroundTint="@color/preto"
-            app:cardCornerRadius="4dp"
-            app:layout_constraintBottom_toBottomOf="@+id/cardMinimo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/cardMinimo"
-            app:layout_constraintVertical_bias="0.0">
-
-            <TextView
-                android:id="@+id/itCardMaximo"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="@color/white"
-                android:textSize="36sp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Máximo"
-            app:layout_constraintEnd_toEndOf="@+id/cardMaximo"
-            app:layout_constraintHorizontal_bias="0.56"
-            app:layout_constraintStart_toStartOf="@+id/cardMaximo"
-            app:layout_constraintTop_toBottomOf="@+id/cardMaximo" />
-
-
-        <!-- CARD AMPLITUDE -->
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardAmplitude"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="52dp"
-            android:backgroundTint="@color/preto"
-            app:cardCornerRadius="4dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtMinimo">
-
-            <TextView
-                android:id="@+id/itCardAmplitude"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="@color/white"
-                android:textSize="36sp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <!-- CARD MÉDIA -->
-
-        <TextView
-            android:id="@+id/txtAmplitude"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Amplitude"
-            app:layout_constraintEnd_toEndOf="@+id/cardAmplitude"
-            app:layout_constraintStart_toStartOf="@+id/cardAmplitude"
-            app:layout_constraintTop_toBottomOf="@+id/cardAmplitude" />
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardMedia"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="52dp"
-            android:layout_marginEnd="32dp"
-            android:backgroundTint="@color/preto"
-            app:cardCornerRadius="4dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView4">
-
-            <TextView
-                android:id="@+id/itCardMedia"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="0"
-                android:textColor="@color/white"
-                android:textSize="36sp" />
-
-        </androidx.cardview.widget.CardView>
-
-        <TextView
-            android:id="@+id/txtMedia"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Média"
-            app:layout_constraintEnd_toEndOf="@+id/cardMedia"
-            app:layout_constraintHorizontal_bias="0.459"
-            app:layout_constraintStart_toStartOf="@+id/cardMedia"
-            app:layout_constraintTop_toBottomOf="@+id/cardMedia" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</LinearLayout>
+</ScrollView>
