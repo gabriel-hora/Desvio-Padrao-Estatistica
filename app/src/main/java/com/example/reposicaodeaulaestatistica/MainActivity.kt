@@ -2,8 +2,6 @@ package com.example.reposicaodeaulaestatistica
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.text.trimmedLength
-import androidx.core.view.isEmpty
 import com.example.reposicaodeaulaestatistica.databinding.ActivityMainBinding
 import kotlin.math.sqrt
 
@@ -191,9 +189,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun desvioPadrao(lista: MutableList<Double>) {
 
-        var desvio = variancia(lista)
+        val desvio = variancia(lista)
 
-        var resultadoDesvio = sqrt(desvio.toDouble())
+        val resultadoDesvio = sqrt(desvio)
 
         binding.itCardDesvioPadrao.text = resultadoDesvio.toString()
     }
